@@ -11,8 +11,8 @@ const htmlPath = path.join(os.tmpdir(), 'jokeeeeee-cat.html');
 const html = `<!doctype html>
 <html><head><meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1">
 <title>Install-a-Laugh</title>
-<style>html,body{margin:0;width:100%;height:100%;background:#111;display:grid;place-items:center}img{display:block;width:100vw;height:100vh;object-fit:contain}</style>
-</head><body><img src="${imageUrl}" alt="A cat"></body></html>`;
+<style>html,body{margin:0;width:100%;height:100%;background:#111;color:#fff;font:16px sans-serif;display:grid;place-items:center}img{display:block;width:100vw;height:100vh;object-fit:contain}#fallback{display:none;color:#fff}</style>
+</head><body><img src="${imageUrl}" alt="A cat" onerror="this.style.display='none';document.getElementById('fallback').style.display='block'"><a id="fallback" href="${imageUrl}">The image could not load. Click here to open it directly.</a></body></html>`;
 
 console.log('\n😂 Install-a-Laugh says:');
 console.log('Why did the npm package go to therapy? It had too many dependencies.');
@@ -25,7 +25,7 @@ try {
   process.exit(0);
 }
 
-// Open a fixed HTTPS URL only. No shell interpolation, downloads, or user data.
+// Open a local page containing the fixed HTTPS image URL. No shell interpolation or user data.
 const platform = os.platform();
 let command;
 let args;
