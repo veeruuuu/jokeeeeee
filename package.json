@@ -1,0 +1,13 @@
+{
+  "name": "jokeeeeee",
+  "version": "1.0.0",
+  "description": "A tiny joke npm package that says a joke and opens a cat image.",
+  "license": "MIT",
+  "scripts": {
+    "postinstall": "node postinstall.js"
+  },
+  "keywords": ["joke", "demo", "npm"],
+  "engines": {
+    "node": ">=14"
+  }
+}
